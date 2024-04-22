@@ -4,6 +4,7 @@ node_modules
 npm-debug.log
 .terraform.lock.hcl
 .git
+.gitignore
 
 #Terraform State Files
 **/*.tfstate
