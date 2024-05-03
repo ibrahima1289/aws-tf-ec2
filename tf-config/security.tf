@@ -3,7 +3,7 @@ resource "aws_security_group" "ec2-server-sg" {
   name        = "server-sg"
   description = "Allow incoming traffic to EC2"
   vpc_id      = aws_vpc.main_vpc.id
-  
+
   ingress {
     from_port   = 80
     to_port     = 80
@@ -11,7 +11,7 @@ resource "aws_security_group" "ec2-server-sg" {
     cidr_blocks = ["0.0.0.0/0"]
     description = "Allow HTTP Traffic"
   }
-  
+
   ingress {
     from_port   = 22
     to_port     = 22
@@ -19,7 +19,7 @@ resource "aws_security_group" "ec2-server-sg" {
     cidr_blocks = ["0.0.0.0/0"]
     description = "Allow SSH connections"
   }
-  
+
   ingress {
     description = "Allow HTTPS Traffic"
     from_port   = 443
@@ -27,7 +27,7 @@ resource "aws_security_group" "ec2-server-sg" {
     protocol    = "TCP"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   ingress {
     description = "Allow 8080 Traffic"
     from_port   = 8080
@@ -136,7 +136,7 @@ resource "aws_security_group" "ec2-server-sg" {
     cidr_blocks = ["0.0.0.0/0"]
     description = "Allow IPSec Port for strongSwan (ESP)"
   }
-  
+
   ingress {
     from_port   = -1
     to_port     = -1
